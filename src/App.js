@@ -1,14 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
+import Banner from '~/components/Banner';
+import strings from '~/config/strings';
+import './assets/css/app.scss';
+import './assets/css/fix.scss';
 
 function App() {
+  const bannerProps = {
+    title: strings.banner.title,
+    description: strings.banner.description
+  }
+
   return (
     <div className="home">
-        <h1>Explore the Star Wars Universe</h1>
-        <p>
-          Oribiting the planet at maximum velocity. The moon with the Rebal base will be in range
-          in thirty minutes. This will be a long day remembered.
-        </p>
+      <Banner {...bannerProps} />
     </div>
   );
 }

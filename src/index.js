@@ -1,10 +1,9 @@
 import React from 'react';
 import { render } from 'react-dom';
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import store from "~/data/stores/starwars/store";
-import initialState from "~/data/stores/starwars/initialState";
+import store from "~/data/starwars/store";
+import initialState from "~/data/starwars/initialState";
 import { Provider } from 'react-redux'
 
 const deathStar = store(initialState);
