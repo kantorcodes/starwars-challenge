@@ -14,6 +14,7 @@
         padding-top: 100px;
         h1{
             font-size: 16px;
+            font-weight: normal;
         }
         p{
             font-size: 15px;
@@ -21,14 +22,14 @@
     }
 }
 
-@media(min-width: $break-large)
+@media(min-width: 750px)
 {
     .banner{
         background-image : url('../../assets/images/application_root_header@3x.png'); 
     }
 }
 
-@media(max-width: $break-small) {
+@media(max-width: 750px) {
     .banner{
         background-image : url('../../assets/images/application_root_header@2x.png'); 
     }

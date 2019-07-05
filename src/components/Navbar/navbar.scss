@@ -1,0 +1,17 @@
+.nav-bar{
+    height: 40px;
+    width: 100%;
+    background: #292A2C;
+    color:white;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top:0px;
+    h1{
+        display: flex;
+        justify-self: center;
+        align-self: center;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+}
