@@ -1,4 +1,4 @@
-import constants from "~/data/stores/starwars/constants";
+import constants from "~/data/starwars/constants";
 import { combineReducers } from "redux";
 
 

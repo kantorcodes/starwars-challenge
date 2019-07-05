@@ -1,0 +1,41 @@
+
+
+@import '../variables';
+
+.banner{
+    color: white;
+    .info * {
+        padding: 0px 10px 15px 10px;
+        line-height: 150%;
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        padding-top: 100px;
+        h1{
+            font-size: 16px;
+        }
+        p{
+            font-size: 15px;
+        }
+    }
+}
+
+@media(min-width: $break-large)
+{
+    .banner{
+        background-image : url('../../assets/images/application_root_header@3x.png'); 
+    }
+}
+
+@media(max-width: $break-small) {
+    .banner{
+        background-image : url('../../assets/images/application_root_header@2x.png'); 
+    }
+}
+
+@media (max-width: $break-phone) {
+    .banner{
+        background-image : url('../../assets/images/application_root_header.png');
+    }
+}
