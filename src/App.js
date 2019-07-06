@@ -1,22 +1,15 @@
 import React from 'react';
-import Banner from '~/components/Banner';
-import Navbar from '~/components/Navbar';
-import ListView from '~/components/ListView';
-import strings from '~/config/strings';
+import HomeScreen from "~/screens/Home";
+import CategoryScreen from "~/screens/Category";
+import { Route } from 'react-router-dom'
 import './assets/css/app.scss';
 import './assets/css/fix.scss';
 
 const App = _ => {
-  const bannerProps = {
-    title: strings.banner.title,
-    description: strings.banner.description
-  }
-
   return (
-    <div className="home">
-      <Navbar title="Star Wars Api" />
-      <Banner {...bannerProps} />
-      <ListView />
+    <div className="app">
+      <Route exact path="/" component={HomeScreen} />
+      <Route path={`/categories/:cat`} component={CategoryScreen} />
     </div>
   );
 }
