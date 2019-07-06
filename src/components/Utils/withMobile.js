@@ -21,7 +21,7 @@ const withMobile = (WrappedComponent) => {
             });
         };
         render() {
-            const {isMobile, currentWidth} = this.state;
+            const { isMobile, currentWidth } = this.state;
             return <WrappedComponent {...this.props} currentWidth={currentWidth} isMobile={isMobile} />
         }
     }

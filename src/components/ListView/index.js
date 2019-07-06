@@ -17,7 +17,7 @@ const ListView = (props) => {
     const image = require(`~/assets/images/ensigns${suffix}.png`);
 
     return <div className="list-view" >
-        {items.map((item) => <ListItem {...item} suffix={suffix} />)}
+        {items.map((item) => <ListItem key={item.imageKey} {...item} suffix={suffix} />)}
         <p className="ensigns">
             <img src={image} alt="ensigns" />
         </p>
