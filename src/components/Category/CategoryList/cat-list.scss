@@ -1,0 +1,49 @@
+.cat-list {
+  padding-top: 50px;
+  display: flex;
+  font-family: Roboto;
+  .cat-item {
+    display: flex;
+    height: 100px;
+    width: 100vw;
+    border-bottom: 1px solid #919191;
+    .info{
+        display: flex;
+        height: 80px;
+        width: 100%;
+        font-weight: normal;
+        justify-content: center;
+        flex-direction: column;
+        h2{
+            font-weight: normal;
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            padding-right: 20px;
+            sub{
+                color: #919191;
+            }
+        }
+        p{
+            color: #919191;
+        }
+    }
+    .name-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0px 20px;
+      .name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        height: 60px;
+        width: 60px;
+        color: white;
+        border-radius: 50%;
+        background: #d7d7d7;
+      }
+    }
+  }
+}

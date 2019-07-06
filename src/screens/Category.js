@@ -9,6 +9,7 @@ const CategoryScreen = ({ match }) => {
 
     return <div className="category">
         <Navbar title={title} />
+        <CategoryList type={title} />
     </div>
 }
 

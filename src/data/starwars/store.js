@@ -1,4 +1,4 @@
-import rootReducer from "./reducers/rootReducer";
+import rootReducer from "./reducers/root";
 import thunk from "redux-thunk";
 import { createStore, applyMiddleware, compose } from "redux";
 
@@ -20,6 +20,8 @@ export default (initialState = {},extraStoreEnhancers = []) => {
   const composeEnhancers = composeWithDevTools({
     // Specify custom devTools options
   });
+
+  console.log(initialState);
   
   let enhancers = composeEnhancers(
     applyMiddleware(...middleware),
