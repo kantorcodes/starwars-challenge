@@ -1,12 +1,17 @@
-import React, {memo} from 'react';
+import React, { memo } from 'react';
+import PropTypes from 'prop-types';
 import './qoute.scss';
 
-const Qoute = ({text}) => {
+const Qoute = ({ text }) => {
     return <div className="qoute">
         <p>
-        {text}
+            {text}
         </p>
     </div>
+}
+
+Qoute.propTypes = {
+    text: PropTypes.string.isRequired
 }
 
 export default memo(Qoute);
