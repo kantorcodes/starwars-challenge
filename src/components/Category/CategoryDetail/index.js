@@ -2,16 +2,18 @@
 import React from 'react';
 import Field from './field';
 import PropTypes from 'prop-types';
+import { getName } from '~/helpers/name'
 import "./detail.scss";
 
 
 const CategoryDetail = ({ content, map }) => {
-    const item = {...content};
+    const item = { ...content };
     const title = item[map.title];
     const description = item[map.description];
-    const Abrr = `${title[0]}${title[1]}`.toUpperCase();
-    
+    const Abrr = getName(title);
+
     delete item[map.description];
+    delete item.cat;
 
     return <div className="detail">
         <div className="avatar-box">

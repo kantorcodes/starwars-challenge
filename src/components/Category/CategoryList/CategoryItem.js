@@ -1,12 +1,13 @@
 import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { convertFormat } from '~/helpers/format';
+import { getName } from '~/helpers/name';
 import LinesEllipsis from 'react-lines-ellipsis'
 
 
 const CategoryItem = ({ item, type, map, caret }) => {
     const title = item[map.title]
-    const name = title[0] + title[1];
+    const name = getName(title);
     const date = convertFormat(item.created);
     const regex = /(\d+)/g
     const id = item.url.match(regex)
