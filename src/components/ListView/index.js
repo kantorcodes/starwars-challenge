@@ -1,19 +1,12 @@
 import React from "react";
 import items from "./items";
 import ListItem from "./ListItem";
-import withMobile from "~/components/Utils/withMobile";
+import screenSuffix from '~/helpers/screenSuffix';
 import "./list-view.scss";
 
 const ListView = (props) => {
-    const { isMobile, currentWidth } = props;
+    const suffix = screenSuffix();
 
-    let suffix = '@3x';
-    if (isMobile && currentWidth > 600) {
-        suffix = '@2x';
-    }
-    else {
-        suffix = '';
-    }
     const image = require(`~/assets/images/ensigns${suffix}.png`);
 
     return <div className="list-view" >
@@ -23,4 +16,4 @@ const ListView = (props) => {
         </p>
     </div>
 }
-export default withMobile(ListView);
+export default ListView;

@@ -3,15 +3,31 @@
     width: 100%;
     background: #292A2C;
     color:white;
-    display: flex;
-    justify-content: center;
     position: fixed;
-    top:0px;
-    h1{
+    z-index: 10;
+    top:0;
+    left:0;
+    .nav-container{
         display: flex;
-        justify-self: center;
-        align-self: center;
-        text-transform: uppercase;
-        font-weight: 500;
+        height: 100%;
+        padding: 0px 20px;
+        .logo{
+            align-self: center;
+            -moz-transform: scaleX(-1);
+            -o-transform: scaleX(-1);
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+            img{
+                padding-left: 20px;
+            }
+        }
+        h1{
+            display: flex;
+            margin: auto;
+            align-self: center;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
     }
+
 }

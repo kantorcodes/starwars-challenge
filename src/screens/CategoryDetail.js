@@ -1,19 +1,17 @@
 import React, { memo } from 'react';
 import Navbar from '~/components/Navbar';
-import Qoute from '~/components/Qoute';
-import CategoryList from '~/components/Category/CategoryList';
-import strings from '~/config/strings';
+import CategoryDetail from '~/components/Category/CategoryDetail';
 
 
 const CategoryScreen = ({ match }) => {
 
     const title = match.params.cat;
+    const id = match.params.id;
     window.document.title = title.toUpperCase();
 
-    return <div className="category screen">
+    return <div className="detail screen">
         <Navbar title={title} />
-        <Qoute text={strings.qoute} />
-        <CategoryList type={title} />
+        <CategoryDetail />
     </div>
 }
 

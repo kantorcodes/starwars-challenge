@@ -10,7 +10,10 @@ const HomeScreen = ({match}) => {
         title: strings.banner.title,
         description: strings.banner.description
     }
-    return <div className="home">
+    
+    window.document.title = 'Home';
+
+    return <div className="home screen">
         <Navbar title="Star Wars Api" />
         <Banner {...bannerProps} />
         <ListView />

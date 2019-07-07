@@ -1,10 +1,11 @@
-import React, {memo} from 'React';
-
-
+import React, {memo} from 'react';
+import './qoute.scss';
 
 const Qoute = ({text}) => {
-    return <div>
+    return <div className="qoute">
+        <p>
         {text}
+        </p>
     </div>
 }
 

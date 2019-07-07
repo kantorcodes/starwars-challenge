@@ -1,5 +1,4 @@
 .cat-list {
-  padding-top: 50px;
   display: flex;
   font-family: Roboto;
   .cat-item {
@@ -9,11 +8,12 @@
     border-bottom: 1px solid #919191;
     .info{
         display: flex;
-        height: 80px;
+        height: 100px;
         width: 100%;
         font-weight: normal;
         justify-content: center;
         flex-direction: column;
+        overflow: hidden;
         h2{
             font-weight: normal;
             padding-bottom: 10px;
@@ -24,8 +24,18 @@
                 color: #919191;
             }
         }
-        p{
-            color: #919191;
+        .description{
+            display: flex;
+            justify-content: space-between;
+            padding-right:20px;
+            .text{
+                width: 90%;
+                color: #919191;
+            }
+            img{
+                align-self: center;
+                height: 12px;
+            }
         }
     }
     .name-container {

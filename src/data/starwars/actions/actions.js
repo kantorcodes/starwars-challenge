@@ -9,15 +9,28 @@ export const fetchingData = (fetching = true) => {
     }
 }
 
-export const fetchResource = (page = 1, resource) => async (dispatch, getState) => {
-   
-    console.log('someone called me...');
-    let result = await get(page, resource);
+export const updateIsMobile = (isMobile = false) => {
+    return {
+        type: C.UPDATE_IS_MOBILE,
+        payload: isMobile
+    }
+}
 
-    console.log(resource);
+export const updateCurrentWidth = (currentWidth) => {
+    return {
+        type: C.UPDATE_CURRENT_WIDTH,
+        payload: currentWidth
+    }
+}
+
+
+export const fetchResource = (page = 1, resource) => async (dispatch, getState) => {
+
+    let result = await get(page, resource);
 
     dispatch({
         type: C[`FETCH_${resource.toUpperCase()}`],
-        payload: result
+        payload: { result, page }
     })
 }
+

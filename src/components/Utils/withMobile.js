@@ -1,7 +1,19 @@
 import React, { PureComponent } from 'react';
+import {connect} from 'react-redux';
+import { updateIsMobile, updateCurrentWidth } from '~/data/starwars/actions/actions';
 //This detect mobiles via screenWidth 
 //bypasses needing to check user agent
 //for responsiveness
+
+const mapStateToProps = (state, props) => {
+    return { ...state.browser };
+};
+
+const mapDispatchToProps = {
+    updateIsMobile: updateIsMobile,
+    updateCurrentWidth: updateCurrentWidth
+};
+
 const withMobile = (WrappedComponent) => {
 
     const wrapper = class extends PureComponent {
@@ -15,10 +27,8 @@ const withMobile = (WrappedComponent) => {
             window.removeEventListener("resize", this.resize);
         }
         resize = e => {
-            this.setState({
-                isMobile: window.innerWidth <= 550,
-                currentWidth: window.innerWidth
-            });
+            this.props.updateIsMobile(window.innerWidth <= 550)
+            this.props.updateCurrentWidth(window.innerWidth);
         };
         render() {
             const { isMobile, currentWidth } = this.state;
@@ -26,7 +36,10 @@ const withMobile = (WrappedComponent) => {
         }
     }
 
-    return wrapper;
+    return connect(
+        mapStateToProps,
+        mapDispatchToProps
+    )(wrapper);
 
 }
 
