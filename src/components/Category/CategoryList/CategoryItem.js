@@ -1,13 +1,8 @@
 import React, { memo } from 'react';
-import { format, parse } from 'date-fns';
 import { Link } from 'react-router-dom';
+import { convertFormat } from '~/helpers/format';
 import LinesEllipsis from 'react-lines-ellipsis'
 
-
-export const convertFormat = (dateString, toFormat = 'MM/DD/YYYY') => {
-    const parsed = parse(dateString);
-    return format(parsed, toFormat);
-}
 
 const CategoryItem = ({ item, type, map, caret }) => {
     const title = item[map.title]
