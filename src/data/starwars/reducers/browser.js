@@ -11,6 +11,16 @@ export const isMobile = (state = false, action ) => {
     }
 }
 
+export const lastLocation = (state = '\\',action) => {
+    switch(action.type)
+    {
+        case C.UPDATE_LOCATION:
+            return action.payload;
+        default:
+            return state;
+    }
+}
+
 export const currentWidth = (state = 550, action ) => {
     switch(action.type)
     {
@@ -23,6 +33,7 @@ export const currentWidth = (state = 550, action ) => {
 
 export default combineReducers({
     isMobile,
-    currentWidth
+    currentWidth,
+    lastLocation
 })
 

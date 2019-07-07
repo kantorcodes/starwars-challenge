@@ -1,19 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import getCaret from "~/helpers/caret";
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import "./navbar.scss";
 
 
-const Navbar = ({ title, location, history }) => {
+const Navbar = ({ title, match, location }) => {
     let caret = getCaret();
+
+    let lastLocation = '/';
+
+    if (location.pathname.includes('detail')) {
+        lastLocation = `/categories/${match.params.cat}`;
+    }
 
     return <nav className="nav-bar">
         <div className="nav-container">
             {caret && <p className="logo">
-                <button onClick={history.goBack}>
+                <Link to={lastLocation}>
                     <img src={caret} alt="nav" />
-                </button>
+                </Link>
             </p>}
             <h1>{title}</h1>
         </div>

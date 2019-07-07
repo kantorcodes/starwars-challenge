@@ -1,0 +1,54 @@
+.detail {
+  .avatar-box {
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    justify-content: space-around;
+    .description {
+      color: #fbe75e;
+      font-size: 20px;
+      display: flex;
+      padding: 20px;
+    }
+    .avatar {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 72px;
+      margin-top: 20px;
+      height: 150px;
+      width: 150px;
+      border-radius: 50%;
+      background: white;
+      color: black;
+    }
+  }
+  .field {
+    background: white;
+    .box {
+       height: 80px;
+       padding: 20px;
+      .values {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        border-bottom: 1px solid #dadbdc;
+        .label {
+          color: #717274;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+  .divider {
+    height: 40px;
+    background: black;
+    width: 100%;
+    margin-top: 20px;
+  }
+}

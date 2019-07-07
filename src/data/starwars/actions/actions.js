@@ -23,6 +23,13 @@ export const updateCurrentWidth = (currentWidth) => {
     }
 }
 
+export const updateLocation = (lastLocation) => {
+    return {
+        type: C.UPDATE_LOCATION,
+        payload: lastLocation
+    }
+}
+
 
 export const fetchResource = (page = 1, resource) => async (dispatch, getState) => {
 

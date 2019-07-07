@@ -8,7 +8,7 @@ const ListItem = ({ name, imageKey, suffix = '' }) => {
     const image = require(`~/assets/images/${imageKey}${suffix}.png`);
     const link = `/categories/${name.toLowerCase()}`;
 
-    return <Link to={link}>
+    return <Link to={{pathname: link, last: '/categories/'}} >
         <div className="item">
             <div className="img-container">
                 <img src={image} alt={name} />

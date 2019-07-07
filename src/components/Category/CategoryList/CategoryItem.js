@@ -9,11 +9,13 @@ export const convertFormat = (dateString, toFormat = 'MM/DD/YYYY') => {
     return format(parsed, toFormat);
 }
 
-const CategoryItem = ({ item, type, index, map, caret }) => {
+const CategoryItem = ({ item, type, map, caret }) => {
     const title = item[map.title]
     const name = title[0] + title[1];
     const date = convertFormat(item.created);
-    const link = `/detail/${type}/${index}`
+    const regex = /(\d+)/g
+    const id = item.url.match(regex)
+    const link = `/detail/${type}/${id[0]}`
 
     return <div className="cat-item">
         <div className="name-container">
@@ -32,7 +34,10 @@ const CategoryItem = ({ item, type, index, map, caret }) => {
                     basedOn='words'
                     className="text"
                 />
-                <Link to={link}>
+                <Link to={{
+                    pathname: link,
+                    state: item
+                }}>
                     <img src={caret} alt='caret' />
                 </Link>
             </div>

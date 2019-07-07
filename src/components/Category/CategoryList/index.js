@@ -30,7 +30,7 @@ const CategoryList = ({ type }) => {
         type
     }
 
-    return !data.fetching && <div className="cat-list">
+    return <div className="cat-list">
         <InfiniteScroll
             pageStart={0}
             loadMore={(next)}
@@ -45,4 +45,4 @@ const CategoryList = ({ type }) => {
 
 
 
-export default CategoryList;
+export default memo(CategoryList);
