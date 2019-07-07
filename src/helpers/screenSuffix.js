@@ -8,13 +8,13 @@ export default () => {
 
     const { isMobile, currentWidth } = browser;
 
-    let suffix = '@3x';
-    
+    let suffix = '';
+
     if (isMobile && currentWidth > 600) {
         suffix = '@2x';
     }
-    else {
-        suffix = '';
+    else if(!isMobile) {
+        suffix = '@3x';
     }
     return suffix;
 }

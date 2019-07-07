@@ -6,7 +6,7 @@ import "./navbar.scss";
 
 
 const Navbar = ({ title, match, location }) => {
-    let caret = getCaret();
+    const caret = getCaret();
 
     let lastLocation = '/';
 

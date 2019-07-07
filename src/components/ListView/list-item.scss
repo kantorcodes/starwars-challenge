@@ -18,11 +18,20 @@
     }
 }
 
-@media(min-width: $break-small) {
+@media(min-width: $break-large) {
+    .item{
+        height: 200px;
+        .img-container{
+            min-width: 200px;
+        }
+    }
+}
+
+@media(max-width: $break-medium) {
  .item{
-     height: 120px;
+     height: 150px;
      .img-container{
-         min-width: 100px;
+         min-width: 150px;
      }
  }
 }
