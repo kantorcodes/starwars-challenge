@@ -6,25 +6,12 @@ import "./detail.scss";
 
 
 const CategoryDetail = ({ content, map }) => {
-    const title = content[map.title];
-    const description = content[map.description];
+    const item = {...content};
+    const title = item[map.title];
+    const description = item[map.description];
     const Abrr = `${title[0]}${title[1]}`.toUpperCase();
-    const {
-        films,
-        species,
-        vehicles,
-        starships,
-        residents,
-        pilots,
-        characters,
-        homeworld,
-        people,
-        planets,
-        created,
-        edited,
-        url, ...contentFields } = content;
     
-    delete contentFields[map.description];
+    delete item[map.description];
 
     return <div className="detail">
         <div className="avatar-box">
@@ -36,8 +23,8 @@ const CategoryDetail = ({ content, map }) => {
             </p>
         </div>
         <div className="fields">
-            {Object.keys(contentFields).map((key) => {
-                return <Field key={key} field={contentFields[key]} fieldKey={key} />
+            {Object.keys(item).map((key) => {
+                return <Field key={key} field={item[key]} fieldKey={key} />
             })}
         </div>
     </div>

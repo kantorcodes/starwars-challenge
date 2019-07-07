@@ -11,6 +11,5 @@ export default {
     browser: {
         currentWidth: 0,
         isMobile: false,
-        lastLocation: '/'
     }
 }

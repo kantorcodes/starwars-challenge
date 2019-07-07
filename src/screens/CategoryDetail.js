@@ -11,17 +11,20 @@ const CategoryScreen = ({ match, location }) => {
     const existingContent = location && location.state ? location.state : null;
     const [content, setContent] = useState(existingContent);
 
+    const contentMatches = content && content.cat === cat;
+
     useEffect(() => {
-        if (!content) {
+        if (!content || (!contentMatches)) {
             //We cannot check our redux store 
             //because then we would need to parse out each id individually 
-            byId(id, cat).then(r => {
-                setContent(r);
+            byId(id, cat).then(contentResponse => {
+                contentResponse.cat = cat;
+                setContent(contentResponse);
             });
         }
     }, [content, id, cat, setContent])
 
-    if (!content) {
+    if (!content || !contentMatches) {
         return <div>Loading...</div>
     }
 

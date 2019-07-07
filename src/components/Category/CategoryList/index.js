@@ -11,13 +11,17 @@ const CategoryList = ({ type }) => {
 
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(fetchResource(1, type));
-    }, [dispatch, type])
-
     const data = useSelector(state => {
         return state.space[type.toLowerCase()]
     })
+
+    useEffect(() => {
+        if(data.results.length <= 0)
+        {
+            dispatch(fetchResource(1, type));
+        }
+    }, [dispatch, type])
+
 
     const next = () => dispatch(fetchResource(data.nextPage, type))
     const hasMore = data ? data.results.length < data.count : false
