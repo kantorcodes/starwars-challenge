@@ -20,7 +20,7 @@ const CategoryList = ({ type }) => {
         {
             dispatch(fetchResource(1, type));
         }
-    }, [dispatch, type])
+    }, [dispatch, type,data])
 
 
     const next = () => dispatch(fetchResource(data.nextPage, type))

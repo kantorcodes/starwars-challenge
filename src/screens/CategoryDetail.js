@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useState, setSt } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import Navbar from '~/components/Navbar';
 import CategoryDetail from '~/components/Category/CategoryDetail';
 import { byId } from '~/services/swService';
@@ -10,7 +10,6 @@ const CategoryScreen = ({ match, location }) => {
     const { cat, id } = match.params;
     const existingContent = location && location.state ? location.state : null;
     const [content, setContent] = useState(existingContent);
-
     const contentMatches = content && content.cat === cat;
 
     useEffect(() => {
@@ -22,7 +21,7 @@ const CategoryScreen = ({ match, location }) => {
                 setContent(contentResponse);
             });
         }
-    }, [content, id, cat, setContent])
+    }, [content, id, cat, setContent, contentMatches])
 
     if (!content || !contentMatches) {
         return <div>Loading...</div>

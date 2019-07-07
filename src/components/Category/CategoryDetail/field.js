@@ -17,7 +17,7 @@ const Field = ({ field, fieldKey }) => {
     const label = fieldKey.replace('_', ' ');
     const isArray = Array.isArray(field);
 
-    if (!isArray && (field.toString().includes('https')) || fieldKey === 'url') {
+    if ((!isArray && field.toString().includes('https')) || (fieldKey === 'url')) {
         field = <UrlValue value={field} />
     }
     else if (['created', 'edited'].includes(fieldKey)) {
