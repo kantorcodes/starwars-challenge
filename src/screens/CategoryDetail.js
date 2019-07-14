@@ -3,6 +3,7 @@ import Navbar from '~/components/Navbar';
 import CategoryDetail from '~/components/Category/CategoryDetail';
 import { byId } from '~/services/swService';
 import { categoryListMap } from '~/data/starwars/constants';
+import { withRouter } from "react-router-dom";
 
 
 const CategoryScreen = ({ match, location }) => {
@@ -39,4 +40,4 @@ const CategoryScreen = ({ match, location }) => {
 }
 
 
-export default memo(CategoryScreen);
+export default memo(withRouter(CategoryScreen));

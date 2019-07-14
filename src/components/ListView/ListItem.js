@@ -5,10 +5,10 @@ import './list-item.scss';
 
 const ListItem = ({ name, imageKey, suffix = '' }) => {
 
-    const image = require(`~/assets/images/${imageKey}${suffix}.png`);
+    const image = require(`../../assets/images/${imageKey}${suffix}.png`);
     const link = `/categories/${name.toLowerCase()}`;
 
-    return <Link to={{pathname: link, last: '/categories/'}} >
+    return <Link to={{pathname: link, last: '/categories/'}} data-testid="link" >
         <div className="item">
             <div className="img-container">
                 <img src={image} alt={name} />

@@ -5,15 +5,12 @@ import * as serviceWorker from './serviceWorker';
 import store from "~/data/starwars/store";
 import initialState from "~/data/starwars/initialState";
 import { Provider } from 'react-redux'
-import { BrowserRouter } from 'react-router-dom'
 
 const deathStar = store(initialState);
 
 render(
     <Provider store={deathStar}>
-        <BrowserRouter>
             <App />
-        </BrowserRouter>
     </Provider>,
     document.getElementById('root'));
 

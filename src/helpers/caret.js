@@ -7,7 +7,7 @@ export default () => {
     const suffix = screenSuffix();
 
     if (window.location.pathname !== '/') {
-        caret = require(`~/assets/images/disclosure_caret${suffix}.png`);
+        caret = require(`../assets/images/disclosure_caret${suffix}.png`);
     }
 
     return caret;

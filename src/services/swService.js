@@ -23,6 +23,7 @@ export const get = (page = 1, resourceName) => {
 }
 
 export const byId = (id, resourceName) => {
+    console.log('actual...');
     const url = new URL(`${baseURL}/${resourceName}/${id}`);
     return fetch(url)
         .then(response => response.json())
